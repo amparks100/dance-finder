@@ -1,0 +1,23 @@
+.home-head {
+    position: static;
+    width: 100vw;
+}
+.head-image {
+    max-width: 100%;
+    position: relative;
+}
+.img {
+    width: 100vw;
+}
+.text-on-image {
+    position: absolute;
+    right: 50%;
+    left: 10%;
+    bottom: 50%;
+    font-size: calc(10px + 2vmin);
+    
+}
+.home-description {
+    position: static;
+    
+}
