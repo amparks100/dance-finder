@@ -1,0 +1,131 @@
+.input-section{
+    position: static;
+}
+.search-box {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.search-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.search-box .input-box {
+  position: relative;
+}
+.search-box .input-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.search-box .input-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.search-box .input-box input:focus ~ label, 
+.search-box .input-box input[value]:not([value=""]) ~label {
+  top: -20px;
+  left: 0;
+  color: #0d6efd;
+  font-size: 12px;
+}
+
+.search-box input[type="submit"] {
+  color: #fff;
+  background: linear-gradient(#0d6efd, #0545a6);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  width: 30%;
+  box-shadow: 0 2px 12px -3px #0d6efd;
+  opacity: 0.9;
+}
+
+.search-box input[type="submit"]:hover {
+  opacity: 1;
+  color: #fff;
+  background: #0d6efd;
+  border: none;
+  box-shadow: 0 2px 2px -3px #0d6efd;
+}
+
+.song-info-box {
+    position: absolute;
+    top: 1000px;
+    left: 50%;
+    width: 850px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.song-info-box img {
+  box-shadow: 0 5px 35px #f0f0f0;
+}
+
+.song-info-box b {
+  color: #0d6efd;
+  text-transform: uppercase;
+}
+
+.song-info-box ul li {
+  margin-left: 25px;
+}
+
+.song-info-box .dance-list {
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.song-info-box .dance-list li {
+  padding: 10px;
+  padding-right: 0px;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  font-size:20px;
+  grid-gap: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.dances-container {
+  padding: 20px;
+}
+
+.dances-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+
+.dance-list li:hover {
+  border-radius: 15px;
+  border: 1px solid #fff;
+}

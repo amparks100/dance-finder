@@ -5,6 +5,8 @@ import { Routes, Route, Router } from "react-router-dom";
 
 import Home from "./pages/home";
 import Dance from "./pages/dance";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class App extends React.Component {
   state = {
@@ -45,8 +47,10 @@ class App extends React.Component {
         </Routes>
         <footer className="App-footer">
           <p>
-            Author: Ashley Parks Github:{" "}
-            <a href="https://github.com/amparks100">@amparks100</a>
+            Created by: Ashley Parks &ensp;
+            <a href="https://github.com/amparks100">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
           </p>
         </footer>
       </div>

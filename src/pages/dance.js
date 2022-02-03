@@ -1,6 +1,7 @@
 // const Dance = () => {
 
 import React from "react";
+import './dance.css';
 
 class Dance extends React.Component {
     constructor(props) {
@@ -23,7 +24,8 @@ class Dance extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({...this.state, 
+        this.setState({
+            ...this.state,
             [event.target.name]: event.target.value,
         });
     }
@@ -31,7 +33,7 @@ class Dance extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         var song = this.state.iSong;
-        fetch('/song_data?'+ new URLSearchParams({
+        fetch('/song_data?' + new URLSearchParams({
             song: song,
             artist: this.state.iArtist,
         }))
@@ -39,7 +41,7 @@ class Dance extends React.Component {
             .then((body) => {
                 console.log("song submitted: " + song);
                 console.log("received analysis: " + body);
-                this.setState({ 
+                this.setState({
                     song: body.song,
                     artist: body.artist,
                     image: body.image,
@@ -47,7 +49,7 @@ class Dance extends React.Component {
                     tempo: body.tempo,
                     time_signature: body.time_signature,
                     dances: body.dances
-                 });
+                });
                 this.setState({ showInfo: true });
             })
             .catch((error) => {
@@ -60,36 +62,45 @@ class Dance extends React.Component {
     render() {
         return (
             <header className="App-header">
-                <p>
-                    Lets find what dances you can do to a song!
-                </p>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Song title:
-                        <input type="text" name="iSong" value={this.state.iSong} onChange={this.handleChange} />
-                    </label>
-                    <br></br>
-                    <label>
-                        Artist (optional):
-                        <input type="text" name="iArtist" value={this.state.iArtist} onChange={this.handleChange} />
-                    </label>
-                    <br></br>
-                    <input type="submit" value="Search!" />
-                </form>
+                <div className="search-box">
+                    <h2>Discover the dances!</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="input-box">
+                            <input type="text" name="iSong" value={this.state.iSong} onChange={this.handleChange} required />
+                            <label>Song title:</label>
+                        </div>
+                        <br />
+                        <div className="input-box">
+                            <input type="text" name="iArtist" value={this.state.iArtist} onChange={this.handleChange} />
+                            <label>Artist (optional):</label>
+                        </div>
+                        <br />
+                        <input type="submit" value="Search!" />
+                    </form>
+                </div>
                 {this.state.showInfo &&
                     <div>
-                        <p>Song selected: {this.state.song} by {this.state.artist}</p>
-                        <br></br>
-                        <img src={this.state.image} width="300" height="300"/>
-                        <br></br>
-                        <p>Tempo: {this.state.tempo}</p>
-                        <p>Time Signature: {this.state.time_signature}</p>
-                        <br></br>
-                        <p>Dances: 
-                        {this.state.dances.map((dance) => (
-                            <li>{dance}</li>
-                        ))}
-                        </p>
+                        <div style={{ height: "1500px" }}></div>
+                        <div className="song-info-box">
+                            <p><b>Song selected:</b> {this.state.song} by {this.state.artist}</p>
+                            <br />
+                            <div className="dances-container">
+                                <div className="dances-child">
+                                    <img src={this.state.image} width="300" height="300" />
+                                    <br />
+                                    <p style={{ fontSize: "17px" }}>Tempo: {this.state.tempo}  |  Time Signature: {this.state.time_signature}</p>
+                                </div>
+                                <div className="dances-child">
+                                    {/* <b>DANCES:</b> */}
+
+                                    <div className="dance-list">
+                                        {this.state.dances.map((dance) => (
+                                            <li>{dance}</li>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 }
             </header>
