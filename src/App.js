@@ -1,10 +1,13 @@
 import React from "react";
 import "./App.css";
-import { Navbar, Nav, NavItem, Container } from "react-bootstrap";
-import { Routes, Route, Router } from "react-router-dom";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Dance from "./pages/dance";
+import SocialInfo from "./pages/Info/social";
+import LatinInfo from "./pages/Info/latin";
+import StandardInfo from "./pages/Info/smooth-standard";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -33,17 +36,31 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar bg="primary" variant="dark" sticky="top">
-          <Container>
-            <Navbar.Brand href="#home">DanceFinder</Navbar.Brand>
+          <Container
+            style={{ fontFamily: "apple chancery", fontWeight: "bold" }}
+          >
+            <Navbar.Brand href="/">DanceFinder</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/dance">Dance</Nav.Link>
+              <Nav.Link href="/search">Search</Nav.Link>
+              <NavDropdown title="Info">
+                <NavDropdown.Item href="/info/smooth-standard">
+                  Smooth/Standard
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/info/rhythm-latin">
+                  Rhythm/Latin
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/info/social">Social</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Container>
         </Navbar>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/dance" element={<Dance />}></Route>
+          <Route path="/" element={<Home />}/>
+          <Route path="/search" element={<Dance />}/>
+          <Route path="/info/smooth-standard" element={<StandardInfo />}/>
+          <Route path="/info/rhythm-latin" element={<LatinInfo />}/>
+          <Route path="/info/social" element={<SocialInfo />}/>
         </Routes>
         <footer className="App-footer">
           <p>

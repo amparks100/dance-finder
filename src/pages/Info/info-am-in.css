@@ -1,0 +1,20 @@
+.american-international-container {
+    padding: 20px;
+}
+
+.american-international-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+
+.imgContainer {
+    overflow: hidden;
+   
+}
+
+.imgContainer img {
+    width: 100vw;
+    margin:-250px 0px -125px 0px;
+    /* height: 200px; */
+}
