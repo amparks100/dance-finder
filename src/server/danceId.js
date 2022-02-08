@@ -15,7 +15,7 @@ const smoothBallroomDances = {
         time_signature: "2",
         bpm: [60, 64],
     },
-    "Vienese Waltz": {
+    "Viennese Waltz": {
         time_signature: "3",
         bpm: [159, 162],
     },
@@ -34,7 +34,7 @@ const standardBallroomDances = {
         time_signature: "2",
         bpm: [64, 64],
     },
-    "Vienese Waltz": {
+    "Viennese Waltz": {
         time_signature: "3",
         bpm: [168, 180],
     },
@@ -61,10 +61,7 @@ const rhythmDances = {
         time_signature: "4",
         bpm: [188, 204],
     },
-    "Hustle": {
-        time_signature: "4",
-        bpm: [112, 120],
-    },
+   
     "Bolero": {
         time_signature: "4",
         bpm: [96, 104],
@@ -114,6 +111,10 @@ const socialDances = {
     "Polka": {
         time_signature: "2",
         bpm: [120, 124],
+    },
+    "Hustle": {
+        time_signature: "4",
+        bpm: [112, 120],
     }
 }
 

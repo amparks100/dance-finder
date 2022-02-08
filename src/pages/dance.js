@@ -55,8 +55,22 @@ class Dance extends React.Component {
             .catch((error) => {
                 console.log(error);
             });
+    }
 
-
+    handleDanceClick(dance, _) {
+        const lowerdance = dance.toLowerCase();
+        const socialDances = ["salsa", "merengue", "bachata", "hustle", "west coast swing", "polka"];
+        const latinDances = ["cha cha", "rhumba", "east coast swing", "mambo", "bolero", "samba", "paso doble", "jive"];
+        const standardDances = ["waltz", "tango", "foxtrot", "viennese waltz", "quickstep"];
+        if(socialDances.includes(lowerdance)){
+            window.location.href=`/info/social#${lowerdance}`
+        }
+        if(latinDances.includes(lowerdance)){
+            window.location.href=`/info/rhythm-latin#${lowerdance}`
+        }
+        if(standardDances.includes(lowerdance)){
+            window.location.href=`/info/smooth-standard#${lowerdance}`
+        }
     }
 
     render() {
@@ -95,7 +109,7 @@ class Dance extends React.Component {
 
                                     <div className="dance-list">
                                         {this.state.dances.map((dance) => (
-                                            <li>{dance}</li>
+                                            <li onClick={this.handleDanceClick.bind(this, dance)}>{dance}</li>
                                         ))}
                                     </div>
                                 </div>
