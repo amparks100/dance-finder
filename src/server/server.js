@@ -196,7 +196,7 @@ async function getSongData(req) {
   let uri;
   console.log(req.query.artist);
   console.log(req.query.song);
-  if(req.query.artist === undefined || req.query.artist ===''){
+  if (req.query.artist === undefined || req.query.artist === '') {
     uri = "https://api.spotify.com/v1/search?type=track&q=track%3A" + req.query.song;
   } else {
     uri = "https://api.spotify.com/v1/search?type=track&q=track%3A" + req.query.song + "+artist%3A" + req.query.artist;
@@ -230,26 +230,26 @@ app.get('/song_data', async function (req, res) {
   try {
     const data = await getSongData(req);
     console.log(data);
-    if(data === undefined || data.tracks.items.length===0){
+    if (data === undefined || data.tracks.items.length === 0) {
       return res.status(404);
     }
     song_data = data.tracks.items[0];
     spotify_id = song_data.id
     console.log("found spotify id " + spotify_id);
     analysis = await getAnalysis(spotify_id);
-    dances = danceId.identifyDances(analysis.track.tempo,analysis.track.time_signature); 
+    dances = danceId.identifyDances(analysis.track.tempo, analysis.track.time_signature);
   } catch (err) {
     throw err;
   }
-  return res.status(200).send({ 
-    id: spotify_id, 
+  return res.status(200).send({
+    id: spotify_id,
     song: song_data.name,
     artist: song_data.artists[0].name,
     image: song_data.album.images[0].url,
     preview: song_data.preview_url,
-    tempo: analysis.track.tempo, 
+    tempo: analysis.track.tempo,
     time_signature: analysis.track.time_signature,
-    dances: dances 
+    dances: dances
   });
 
 })

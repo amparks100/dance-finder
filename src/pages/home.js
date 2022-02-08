@@ -1,6 +1,5 @@
 import React from 'react';
 import BallroomWelcome from '../components/ballroomWelcome';
-import ballroomImg from '../images/ballroom-dance-2.jpeg';
 import './home.css';
 
 
@@ -39,13 +38,13 @@ const Home = () => {
         <div>
             <header className="App-header">
                 <BallroomWelcome />
-                <br/>
+                <br />
                 <div className="home-description">
                     <p>
                         I've created this website to give dancers the ability to see what type of dance matches their favorite songs.
                         After a while this ability comes easily by just feeling the music, but as a begninner this tool should be very useful.
                     </p>
-                    <p>Head over to the <a href='/search' style={{textDecoration: "none"}}>search</a> page to try it out!</p>
+                    <p>Head over to the <a href='/search' style={{ textDecoration: "none" }}>search</a> page to try it out!</p>
                 </div>
             </header>
         </div>

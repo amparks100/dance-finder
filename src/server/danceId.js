@@ -61,7 +61,7 @@ const rhythmDances = {
         time_signature: "4",
         bpm: [188, 204],
     },
-   
+
     "Bolero": {
         time_signature: "4",
         bpm: [96, 104],
@@ -137,8 +137,8 @@ function identifyDances(temp, time_signature) {
         for (let dance in dances) {
             const danceObject = dances[dance];
             const isInBpmRange = temp >= danceObject.bpm[0] && temp <= danceObject.bpm[1];
-            if (danceObject.time_signature == time_signature && isInBpmRange ){
-                console.log("I found a dance that matches! "+ dance)
+            if (danceObject.time_signature == time_signature && isInBpmRange) {
+                console.log("I found a dance that matches! " + dance)
                 matchingDances.push(dance);
             }
         }

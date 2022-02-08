@@ -56,11 +56,11 @@ class App extends React.Component {
           </Container>
         </Navbar>
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/search" element={<Dance />}/>
-          <Route path="/info/smooth-standard" element={<StandardInfo />}/>
-          <Route path="/info/rhythm-latin" element={<LatinInfo />}/>
-          <Route path="/info/social" element={<SocialInfo />}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Dance />} />
+          <Route path="/info/smooth-standard" element={<StandardInfo />} />
+          <Route path="/info/rhythm-latin" element={<LatinInfo />} />
+          <Route path="/info/social" element={<SocialInfo />} />
         </Routes>
         <footer className="App-footer">
           <p>

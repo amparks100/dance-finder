@@ -62,14 +62,14 @@ class Dance extends React.Component {
         const socialDances = ["salsa", "merengue", "bachata", "hustle", "west coast swing", "polka"];
         const latinDances = ["cha cha", "rhumba", "east coast swing", "mambo", "bolero", "samba", "paso doble", "jive"];
         const standardDances = ["waltz", "tango", "foxtrot", "viennese waltz", "quickstep"];
-        if(socialDances.includes(lowerdance)){
-            window.location.href=`/info/social#${lowerdance}`
+        if (socialDances.includes(lowerdance)) {
+            window.location.href = `/info/social#${lowerdance}`
         }
-        if(latinDances.includes(lowerdance)){
-            window.location.href=`/info/rhythm-latin#${lowerdance}`
+        if (latinDances.includes(lowerdance)) {
+            window.location.href = `/info/rhythm-latin#${lowerdance}`
         }
-        if(standardDances.includes(lowerdance)){
-            window.location.href=`/info/smooth-standard#${lowerdance}`
+        if (standardDances.includes(lowerdance)) {
+            window.location.href = `/info/smooth-standard#${lowerdance}`
         }
     }
 
@@ -105,7 +105,6 @@ class Dance extends React.Component {
                                     <p style={{ fontSize: "17px" }}>Tempo: {this.state.tempo}  |  Time Signature: {this.state.time_signature}</p>
                                 </div>
                                 <div className="dances-child">
-                                    {/* <b>DANCES:</b> */}
 
                                     <div className="dance-list">
                                         {this.state.dances.map((dance) => (
