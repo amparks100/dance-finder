@@ -1,12 +1,3 @@
-/**
- * This is an example of a basic node.js script that performs
- * the Authorization Code oAuth2 flow to authenticate against
- * the Spotify Accounts.
- *
- * For more information, read
- * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
- */
-
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
@@ -16,6 +7,7 @@ var async = require('async');
 var axios = require('axios');
 
 var danceId = require("./danceId");
+const { CronJob } = require('cron');
 
 var client_id = 'ac3963cdf00943d2bca5b4444e205bdb'; // Your client id
 var client_secret = '15fff42b994f4c4ab47326209a5946d5'; // Your secret
@@ -254,8 +246,11 @@ app.get('/song_data', async function (req, res) {
 
 })
 
+//get a new spotify token every 50 minutes
+var tokenJob = new CronJob('*/50 * * * *', newClientToken);
 
 console.log('Listening on 8888');
 app.listen(8888, function () {
   newClientToken();
+  tokenJob.start();
 });
