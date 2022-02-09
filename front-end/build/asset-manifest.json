@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.07dd3784.css",
+    "main.js": "/static/js/main.ee0108c5.js",
+    "static/media/latin-dance2.jpg": "/static/media/latin-dance2.40066aba9c8f1146934b.jpg",
+    "static/media/tango-dance.jpg": "/static/media/tango-dance.7b623d8e12cad73e035e.jpg",
+    "static/media/swing-dance.jpg": "/static/media/swing-dance.baa6a64eca9162c4a7d0.jpg",
+    "static/media/ballroom-dance-2.jpeg": "/static/media/ballroom-dance-2.5e63ac2b39c4d586e4ba.jpeg",
+    "index.html": "/index.html",
+    "main.07dd3784.css.map": "/static/css/main.07dd3784.css.map",
+    "main.ee0108c5.js.map": "/static/js/main.ee0108c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07dd3784.css",
+    "static/js/main.ee0108c5.js"
+  ]
+}
