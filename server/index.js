@@ -12,7 +12,7 @@ const { CronJob } = require('cron');
 
 var client_id = 'ac3963cdf00943d2bca5b4444e205bdb'; // Your client id
 var client_secret = '15fff42b994f4c4ab47326209a5946d5'; // Your secret
-var redirect_uri = 'http://localhost:80/callback'; // Your redirect uri
+var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
 
 var client_access_token = '';
 /**
@@ -257,8 +257,9 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../front-end/build', 'index.html'));
 });
 
-console.log('Listening on 80');
-app.listen(80, function () {
+const port = process.env.PORT || 3000;
+console.log(`Listening on ${port}`);
+app.listen(port, function () {
   newClientToken();
   tokenJob.start();
 });

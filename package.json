@@ -53,5 +53,5 @@
     "type": "git",
     "url": "https://github.com/amparks100/dance-finder.git"
   },
-  "proxy": "http://localhost:80"
+  "proxy": "http://localhost:3000"
 }
