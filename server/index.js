@@ -5,6 +5,7 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var async = require('async');
 var axios = require('axios');
+var path = require('path');
 
 var danceId = require("./danceId");
 const { CronJob } = require('cron');
@@ -248,6 +249,13 @@ app.get('/song_data', async function (req, res) {
 
 //get a new spotify token every 50 minutes
 var tokenJob = new CronJob('*/50 * * * *', newClientToken);
+
+app.use(express.static(path.join(__dirname, '../front-end/build')));
+
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../front-end/build', 'index.html'));
+});
 
 console.log('Listening on 8888');
 app.listen(8888, function () {
