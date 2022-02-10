@@ -10,7 +10,7 @@ class BallroomWelcome extends React.Component {
                 <div className="head-image">
                     <img src={ballroomImg} alt="Ballroom Dancing Couple" style={{ width: "100vw" }} />
                     <div className="text-on-image">
-                        <p style={{ fontFamily: "apple chancery", fontSize: "35px" }}>
+                        <p style={{ fontFamily: "apple chancery", fontSize: "30px + 2vmin" }}>
                             Welcome to Dance Finder!
                         </p>
                     </div>

@@ -35,26 +35,28 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navbar bg="primary" variant="dark" sticky="top">
-          <Container
-            style={{ fontFamily: "apple chancery", fontWeight: "bold" }}
-          >
-            <Navbar.Brand href="/">DanceFinder</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/search">Search</Nav.Link>
-              <NavDropdown title="Info">
-                <NavDropdown.Item href="/info/smooth-standard">
-                  Smooth/Standard
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/info/rhythm-latin">
-                  Rhythm/Latin
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/info/social">Social</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Container>
-        </Navbar>
+        <header className="App-header">
+          <Navbar bg="primary" variant="dark" sticky="top">
+            <Container
+              style={{ fontFamily: "apple chancery", fontWeight: "bold" }}
+            >
+              <Navbar.Brand href="/">DanceFinder</Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/search">Search</Nav.Link>
+                <NavDropdown title="Info">
+                  <NavDropdown.Item href="/info/smooth-standard">
+                    Smooth/Standard
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/info/rhythm-latin">
+                    Rhythm/Latin
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/info/social">Social</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            </Container>
+          </Navbar>
+        </header>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Dance />} />

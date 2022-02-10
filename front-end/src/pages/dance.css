@@ -5,7 +5,7 @@
   position: absolute;
   top: 300px;
   left: 50%;
-  width: 400px;
+  width: 70%;
   padding: 40px;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
@@ -76,13 +76,17 @@
     position: absolute;
     top: 1000px;
     left: 50%;
-    width: 850px;
+    width: 90%;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+}
+
+.song-info-box p {
+  font-size: larger;
 }
 
 .song-info-box img {
@@ -126,7 +130,40 @@
   padding: 20px;
 }
 
+.dances-child img {
+  width: 300px;
+  height: 300px;
+}
+
+.dances-child .tiny-text {
+  font-size: smaller;
+}
+
 .dance-list li:hover {
   border-radius: 15px;
   border: 1px solid #fff;
+}
+
+@media screen {
+
+  .dances-container {
+    padding: 5px;
+  }
+
+  .dances-child {
+    width: 100%;
+    float: left;
+    padding: 20px;
+  }
+
+  .dances-child img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .song-info-box .dance-list li {
+    font-size: large;
+    border-radius: 15px;
+    border: 1px solid #fff;
+  }
 }

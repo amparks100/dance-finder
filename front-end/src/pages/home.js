@@ -35,18 +35,16 @@ const Home = () => {
     // };
 
     return (
-        <div>
-            <header className="App-header">
-                <BallroomWelcome />
-                <br />
-                <div className="home-description">
-                    <p>
-                        I've created this website to give dancers the ability to see what type of dance matches their favorite songs.
-                        After a while this ability comes easily by just feeling the music, but as a begninner this tool should be very useful.
-                    </p>
-                    <p>Head over to the <a href='/search' style={{ textDecoration: "none" }}>search</a> page to try it out!</p>
-                </div>
-            </header>
+        <div className="App-body">
+            <BallroomWelcome />
+            <br />
+            <div className="home-description">
+                <p>
+                    I've created this website to give dancers the ability to see what type of dance matches their favorite songs.
+                    After a while this ability comes easily by just feeling the music, but as a begninner this tool should be very useful.
+                </p>
+                <p>Head over to the <a href='/search' style={{ textDecoration: "none" }}>search</a> page to try it out!</p>
+            </div>
         </div>
     );
 };

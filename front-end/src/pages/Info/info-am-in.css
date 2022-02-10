@@ -10,11 +10,9 @@
 
 .imgContainer {
     overflow: hidden;
-   
 }
 
 .imgContainer img {
     width: 100vw;
-    margin:-250px 0px -125px 0px;
-    /* height: 200px; */
+    margin: -10% 0px -20% 0px;
 }

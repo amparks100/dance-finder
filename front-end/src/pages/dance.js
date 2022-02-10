@@ -75,7 +75,7 @@ class Dance extends React.Component {
 
     render() {
         return (
-            <header className="App-header">
+            <div className="App-body">
                 <div className="search-box">
                     <h2>Discover the dances!</h2>
                     <form onSubmit={this.handleSubmit}>
@@ -100,9 +100,9 @@ class Dance extends React.Component {
                             <br />
                             <div className="dances-container">
                                 <div className="dances-child">
-                                    <img src={this.state.image} width="300" height="300" />
+                                    <img src={this.state.image} />
                                     <br />
-                                    <p style={{ fontSize: "17px" }}>Tempo: {this.state.tempo}  |  Time Signature: {this.state.time_signature}</p>
+                                    <p className="tiny-text">Tempo: {this.state.tempo}  |  Time Signature: {this.state.time_signature}</p>
                                 </div>
                                 <div className="dances-child">
 
@@ -116,7 +116,7 @@ class Dance extends React.Component {
                         </div>
                     </div>
                 }
-            </header>
+            </div>
         );
     }
 }
