@@ -211,10 +211,17 @@ async function getAnalysis(spotifyId) {
   return response.data;
 }
 
-app.get('/song_data', async function (req, res) {
-  //find spotify song id
-  console.log("finding song");
+async function getArtistInfo(artistId) {
+  //get artist information
+  const uri = 'https://api.spotify.com/v1/artists/' + artistId;
+  const response = await axios.get(uri, {
+    headers: { 'Authorization': 'Bearer ' + client_access_token }
+  })
+  //console.log(response.data);
+  return response.data;
+}
 
+app.get('/song_data', async function (req, res) {
   //TODO: add retry
   var song_data;
   var spotify_id = '';
@@ -222,15 +229,15 @@ app.get('/song_data', async function (req, res) {
   var dances;
   try {
     const data = await getSongData(req);
-    console.log(data);
     if (data === undefined || data.tracks.items.length === 0) {
       return res.status(404);
     }
     song_data = data.tracks.items[0];
     spotify_id = song_data.id
-    console.log("found spotify id " + spotify_id);
+    artist_id = song_data.artists[0].id;
     analysis = await getAnalysis(spotify_id);
-    dances = danceId.identifyDances(analysis.track.tempo, analysis.track.time_signature);
+    artist = await getArtistInfo(artist_id);
+    dances = danceId.identifyDances(analysis.track.tempo, analysis.track.time_signature, artist.genres);
   } catch (err) {
     throw err;
   }
