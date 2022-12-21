@@ -16,6 +16,10 @@ class App extends React.Component {
     data: null,
   };
 
+  getServerUrl() {
+    return process.env.REACT_APP_SERVER_URL ? process.env.REACT_APP_SERVER_URL : `localhost:3000`;
+  }
+
   componentDidMount() {
     this.callBackendAPI()
       .then((res) => this.setState({ data: res.express }))
@@ -23,7 +27,7 @@ class App extends React.Component {
   }
   // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
-    const response = await fetch("/express_backend");
+    const response = await fetch(this.getServerUrl() + "/express_backend");
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -51,7 +55,9 @@ class App extends React.Component {
                   <NavDropdown.Item href="/info/rhythm-latin">
                     Rhythm/Latin
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/info/social">Social</NavDropdown.Item>
+                  <NavDropdown.Item href="/info/social">
+                    Social
+                  </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Container>

@@ -30,10 +30,14 @@ class Dance extends React.Component {
         });
     }
 
+    getServerUrl() {
+        return process.env.REACT_APP_SERVER_URL ? process.env.REACT_APP_SERVER_URL : `localhost:3000`;
+    }
+
     handleSubmit(event) {
         event.preventDefault();
         var song = this.state.iSong;
-        fetch('/song_data?' + new URLSearchParams({
+        fetch(this.getServerUrl() + '/song_data?' + new URLSearchParams({
             song: song,
             artist: this.state.iArtist,
         }))
