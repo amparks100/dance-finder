@@ -264,7 +264,7 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../front-end/build', 'index.html'));
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 console.log(`Listening on ${port}`);
 app.listen(port, function () {
   newClientToken();

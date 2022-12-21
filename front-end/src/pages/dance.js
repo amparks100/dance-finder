@@ -31,7 +31,7 @@ class Dance extends React.Component {
     }
 
     getServerUrl() {
-        return process.env.REACT_APP_SERVER_URL ? process.env.REACT_APP_SERVER_URL : `localhost:3000`;
+        return process.env.REACT_APP_SERVER_URL ? process.env.REACT_APP_SERVER_URL : ``;
     }
 
     handleSubmit(event) {
